@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiAppHotelAtt.Views"
+             x:Class="MauiAppHotelAtt.Views.Sobre"
+             BackgroundColor="#2C2C2C">
+
+    <VerticalStackLayout Padding="20" HorizontalOptions="Center">
+        <Label Text="Sobre o Aplicativo"
+               FontSize="32"
+               TextColor="Goldenrod"
+               HorizontalOptions="Center" />
+
+        <Label Text="Desenvolvedor: Iarley Rafael"
+               FontSize="20"
+               TextColor="Goldenrod"
+               HorizontalOptions="Center" />
+
+        <Label Text="Ano de Desenvolvimento: 2024"
+               FontSize="20"
+               TextColor="Goldenrod"
+               HorizontalOptions="Center" />
+
+        <Button Text="Voltar" BackgroundColor="Goldenrod" TextColor="Black" Clicked="OnVoltarClicked"/>
+    </VerticalStackLayout>
+</ContentPage>

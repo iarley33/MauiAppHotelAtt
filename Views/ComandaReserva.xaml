@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotelAtt.Views.ComandaReserva"
+             BackgroundColor="Black">
+
+    <ContentPage.Resources>
+        <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#2C2C2C" Offset="0"/>
+            <GradientStop Color="#1A1A1A" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Background="{StaticResource GradientBackground}" Padding="10">
+        <Label Text="Comanda da Reserva" FontSize="30" TextColor="Goldenrod" HorizontalOptions="Center" FontFamily="LuxuriousFont"/>
+
+        <Label Text="Suíte Selecionada:" TextColor="Goldenrod" FontFamily="LuxuriousFont"/>
+        <Label Text="{Binding SuiteSelecionada}" TextColor="White"/>
+
+        <Label Text="Número de Adultos:" TextColor="Goldenrod" FontFamily="LuxuriousFont"/>
+        <Label Text="{Binding NumeroAdultos}" TextColor="White"/>
+
+        <Label Text="Número de Crianças:" TextColor="Goldenrod" FontFamily="LuxuriousFont"/>
+        <Label Text="{Binding NumeroCriancas}" TextColor="White"/>
+
+        <Label Text="Valor Total a Pagar:" TextColor="Goldenrod" FontFamily="LuxuriousFont"/>
+        <Label Text="{Binding ValorTotal}" TextColor="White"/>
+
+        <Button Text="Confirmar Reserva" BackgroundColor="Goldenrod" TextColor="Black" Clicked="OnConfirmarClicked" FontFamily="LuxuriousFont"/>
+    </VerticalStackLayout>
+</ContentPage>

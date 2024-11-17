@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:MauiAppHotelAtt.Views"
+             x:Class="MauiAppHotelAtt.Views.ContratacaoHospedagem"
+             BackgroundColor="{DynamicResource Gray100}">
+
+    <ContentPage.Resources>
+        <LinearGradientBrush x:Key="GradientBackground" StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#2C2C2C" Offset="0"/>
+            <GradientStop Color="#1A1A1A" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Resources>
+
+    <VerticalStackLayout Background="{StaticResource GradientBackground}" Padding="10">
+        <Label Text="Cálculo da Diária"
+               FontSize="30"
+               TextColor="Goldenrod"
+               FontFamily="LuxuriousFont"
+               HorizontalOptions="Center" />
+
+        <Grid RowDefinitions="Auto, Auto" ColumnDefinitions="*, *, 2*">
+            <Label Grid.Row="0" Grid.Column="0" Text="Adultos:" FontFamily="LuxuriousFont"/>
+            <Label Grid.Row="0" Grid.Column="1" TextColor="Goldenrod" Text="{Binding Value}" BindingContext="{x:Reference stp_adultos}" FontFamily="LuxuriousFont"/>
+            <Stepper Grid.Row="0" Grid.Column="2" x:Name="stp_adultos" Minimum="0" Maximum="10" Increment="1" />
+
+            <Label Grid.Row="1" Grid.Column="0" Text="Crianças:" FontFamily="LuxuriousFont"/>
+            <Label Grid.Row="1" Grid.Column="1" TextColor="Goldenrod" Text="{Binding Value}" BindingContext="{x:Reference stp_criancas}" FontFamily="LuxuriousFont"/>
+            <Stepper Grid.Row="1" Grid.Column="2" x:Name="stp_criancas" Minimum="0" Maximum="10" Increment="1" />
+        </Grid>
+
+        <Frame Padding="10" Margin="10">
+            <VerticalStackLayout>
+                <Label Text="Período da Estadia" FontSize="20" TextColor="Goldenrod" HorizontalOptions="Center" FontFamily="LuxuriousFont"/>
+
+                <HorizontalStackLayout>
+                    <Label Text="Check-in:" VerticalOptions="Center" TextColor="White" FontFamily="LuxuriousFont"/>
+                    <DatePicker x:Name="dtpck_checkin" Format="dd/MM/yyyy" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+
+                <HorizontalStackLayout>
+                    <Label Text="Check-out:" VerticalOptions="Center" TextColor="White" FontFamily="LuxuriousFont"/>
+                    <DatePicker x:Name="dtpck_checkout" Format="dd/MM/yyyy" VerticalOptions="Center" />
+                </HorizontalStackLayout>
+            </VerticalStackLayout>
+        </Frame>
+
+        <Label Text="Escolha sua Suíte" TextColor="Goldenrod" FontFamily="LuxuriousFont"/>
+        <Picker x:Name="pck_quarto" Title="Selecione sua Acomodação">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Suíte Luxuosa</x:String>
+                    <x:String>Suíte Executiva</x:String>
+                    <x:String>Suíte Presidencial</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+
+        <Button Text="Avançar" BackgroundColor="Goldenrod" TextColor="Black" Clicked="OnAvancarClicked" FontFamily="LuxuriousFont"/>
+    </VerticalStackLayout>
+</ContentPage>
